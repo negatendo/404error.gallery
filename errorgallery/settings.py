@@ -25,12 +25,12 @@ SECRET_KEY = '^vzom2-!l9p15qpbhqr&^3olo7@638d8xxb&19)4xzm#ap5)5v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['errorgallery-prod.jvser32wr3.us-west-2.elasticbeanstalk.com','404error.gallery']
-
+ALLOWED_HOSTS = ['errorgallery-prod.jvser32wr3.us-west-2.elasticbeanstalk.com','404error.gallery','127.0.0.1']
 
 # Application definition
 
 INSTALLED_APPS = [
+    'errors.apps.ErrorsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
