@@ -9,7 +9,7 @@ def display(request, slug):
     try:
         error_art = ErrorArt.objects.get(slug=slug)
     except:
-        return HttpResponse('Didnt find that page so show a random ErrorArt here!')
+        return HttpResponse('Didnt find that page so show a random ErrorArt here!',status=404)
     # render raw content of object found!
-    return HttpResponse(error_art.content)
+    return HttpResponse(error_art.content,status=404)
 
