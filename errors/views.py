@@ -3,7 +3,8 @@ from django.http import HttpResponse
 from .models import ErrorArt
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the error index. This page will soon list all Error art entries.")
+    error_art_list = ErrorArt.objects.order_by('?')
+    return render(request,'errors/index.html', { 'arts':error_art_list } )
 
 def display(request, slug):
     try:
