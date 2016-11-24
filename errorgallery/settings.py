@@ -20,12 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '^vzom2-!l9p15qpbhqr&^3olo7@638d8xxb&19)4xzm#ap5)5v'
+SECRET_KEY = 'dontforgettochangemeeeeee'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['errorgallery-prod.jvser32wr3.us-west-2.elasticbeanstalk.com','404error.gallery','127.0.0.1','localhost']
+ALLOWED_HOSTS = ['404error.gallery','127.0.0.1','localhost']
 
 # Application definition
 
@@ -119,3 +119,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = 'static'
+
+# uploaded media goez here
+MEDIA_URL = '/media/'
+MEDIA_ROOT = 'media'

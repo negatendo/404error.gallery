@@ -1,5 +1,8 @@
 from django.contrib import admin
-from .models import ErrorArt
+from .models import ErrorArt, ErrorArtFile
+
+class ErrorArtFileInline(admin.TabularInline):
+    model = ErrorArtFile
 
 @admin.register(ErrorArt)
 class ErrorArtAdmin(admin.ModelAdmin):
@@ -9,3 +12,4 @@ class ErrorArtAdmin(admin.ModelAdmin):
             'url')
     # read only fields
     readonly_fields = ('slug',)
+    inlines = [ ErrorArtFileInline ]
