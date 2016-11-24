@@ -7,3 +7,5 @@ class ErrorArtAdmin(admin.ModelAdmin):
     list_display = (
             'artist',
             'url')
+    # read only fields
+    readonly_fields = ('slug',)
