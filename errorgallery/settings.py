@@ -25,7 +25,7 @@ SECRET_KEY = 'dontforgettochangemeeeeee'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['404error.gallery','127.0.0.1','localhost']
+ALLOWED_HOSTS = ['404error.gallery','127.0.0.1','localhost','errorgallery-prod.gcg9gm37it.us-east-1.elasticbeanstalk.com']
 
 # Application definition
 
