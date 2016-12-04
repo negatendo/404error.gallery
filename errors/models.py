@@ -6,9 +6,11 @@ import hashlib
 
 class ErrorArt(models.Model):
     artist = models.CharField(max_length=200,help_text="Artist name. Required.",blank=False,unique=True)
-    artist_url = models.URLField(help_text="Artist homepage or whatever. Not required.",blank=True)
     slug = models.SlugField(help_text="Long and mystrious auto-generated slug. This is the 'URL' for this page, and the directory where its assets will be uploaded.",blank=False,default='',unique=True)
     content = models.TextField(help_text="The ENTIRE HTML for the page. You'll need to reference static assets like src=\"/media/[slug]/[asset].gif\" SAVE THIS RECORD FIRST TO UPLOAD FILES AND SEE THE SLUG. Then change the HTML. Yea it's silly. Required.",blank=False)
+
+    # don't worry about artist url for now but let's hide to avoid migration or loss of data
+    artist_url = models.URLField(help_text="Artist homepage or whatever. Not required.",blank=True,editable=False)
 
     # fetch gallery mode setting for textbox
     if settings.GALLERY_MODE:
