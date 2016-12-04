@@ -16,16 +16,23 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
+# Provide these via enviornment variables or shit's insecure yo (cos dev is default)
+env = {}
+env.update(os.environ)
+if 'SECRET_KEY' in env:
+    SECRET_KEY = env['SECRET_KEY']
+else:
+    SECRET_KEY = 'thisishellainsecurechangeme'
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'dontforgettochangemeeeeee'
+if 'DEBUG' in env:
+    DEBUG = env['DEBUG']
+else:
+    DEBUG = True
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['404error.gallery','127.0.0.1','localhost','errorgallery-prod.gcg9gm37it.us-east-1.elasticbeanstalk.com']
+if 'ALLOWED_HOSTS' in env:
+    ALLOWED_HOSTS = env['ALLOWED_HOSTS']
+else:
+    ALLOWED_HOSTS = ['127.0.0.1','localhost']
 
 # Application definition
 
