@@ -4,6 +4,7 @@ from django.conf import settings
 from .models import ErrorArt
 import random
 from coolname import generate_slug as generate_random_slug
+from django.views.decorators.cache import cache_page
 
 def index(request):
     random_error_art_list = get_error_arts_as_list()
@@ -11,6 +12,8 @@ def index(request):
     random_slug = generate_random_slug()
     return render(request,'errors/index.html', { 'arts': random_error_art_list, 'random_slug': random_slug } )
 
+# cache these pages so we go light on the lookup
+@cache_page(settings.CACHE_TIME)
 def display(request, slug):
     try:
         error_art = ErrorArt.objects.get(slug=slug)

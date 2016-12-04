@@ -137,3 +137,13 @@ STATIC_ROOT = 'static'
 # uploaded media goez here
 MEDIA_URL = '/media/'
 MEDIA_ROOT = 'media'
+
+# filesystem cache faster than lookup from sqllite maybe?
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': '/var/tmp/django_cache',
+    }
+}
+# 60 min cache on response views
+CACHE_TIME = 60 * 60
