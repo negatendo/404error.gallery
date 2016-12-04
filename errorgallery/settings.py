@@ -20,19 +20,18 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 env = {}
 env.update(os.environ)
 if 'SECRET_KEY' in env:
-    SECRET_KEY = env['SECRET_KEY']
+    SECRET_KEY = os.environ['SECRET_KEY']
 else:
     SECRET_KEY = 'thisishellainsecurechangeme'
-
 if 'DEBUG' in env:
-    DEBUG = env['DEBUG']
+    DEBUG = eval(os.environ['DEBUG'])
 else:
     DEBUG = True
-
 if 'ALLOWED_HOSTS' in env:
-    ALLOWED_HOSTS = env['ALLOWED_HOSTS']
+    ALLOWED_HOSTS = eval(os.environ['ALLOWED_HOSTS'])
 else:
-    ALLOWED_HOSTS = ['127.0.0.1','localhost']
+    ALLOWED_HOSTS = []
+
 
 # arts r big
 DATA_UPLOAD_MAX_MEMORY_SIZE = 10485760
