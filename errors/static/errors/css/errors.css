@@ -1,0 +1,115 @@
+body {
+    color: black;
+    background-color: #ccc;
+    font-size: 28px;
+}
+h1 {
+    text-align: center;
+    font-size: 4em;
+    font-weight: bold;
+}
+p {
+    text-align: center;
+    padding: 1em;
+    font-size: 100%;
+}
+#stickyhead {
+    top: 0px;
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    padding: 1em 0em 2em 0em;
+    -webkit-box-shadow: 0 6px 4px -4px black;
+    -moz-box-shadow: 0 6px 4px -4px black;
+    box-shadow: 0 6px 4px -4px black;
+    min-height: 20%;
+    opacity: 0.9;
+}
+#arts {
+    text-align: center;
+    padding-top: 21%;
+}
+.sub {
+    text-align: center;
+    color: gray;
+}
+#est {
+    text-align: center;
+    color: gray;
+    font-size: smaller;
+}
+#randoform {
+    text-align: center;
+}
+.artlink {
+    background-color: white;
+    padding: 2em;
+    text-align: center;
+    -webkit-box-shadow: 0 4px 4px -4px black;
+    -moz-box-shadow: 0 4px 4px -4px black;
+    box-shadow: 0 4px 4px -4px black;
+    width: 90%;
+    margin: 1em auto;
+}
+@keyframes glitch {
+    0% { -webkit-transform: skewX(10deg); }
+    10% { -webkit-transform: skewX(-7deg); }
+    20% { -webkit-transform: skewX(21deg); }
+    30% { -webkit-transform: skewX(-70deg); }
+    40% { -webkit-transform: skewX(49deg); }
+    50% { -webkit-transform: skewX(-92deg); }
+    60% { -webkit-transform: skewX(9deg); }
+    70% { -webkit-transform: skewX(-8deg); }
+    80% { -webkit-transform: skewX(1deg); }
+    90% { -webkit-transform: skewX(4deg); }
+    100% { -webkit-transform: skewX(0deg); }
+}
+.glitch {
+    -webkit-animation: glitch 0.2s;
+    -moz-animation: glitch 0.2s;
+    -o-animation: glitch 0.2s;
+    animation: glitch 0.2s;
+
+    -webkit-animation-timing-function: ease-in;
+    -moz-animation-timing-function: ease-in;
+    -o-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+}
+.glitch-header {
+    -webkit-animation: glitch 0.5s;
+    -moz-animation: glitch 0.5s;
+    -o-animation: glitch 0.5s;
+    animation: glitch 0.5s;
+}
+.glitchy-bit {
+    position: fixed;
+    width: 10%;
+    z-index: -1;
+}
+.glitchy-bit.one {
+    top: 10%;
+    left: 30%;
+    border: 20px solid blue;
+    min-height: 500px;
+    min-width: 5000px;
+}
+.glitchy-bit.two{
+    top: 50%;
+    left: 2%;
+    border: 10px solid purple;
+    min-height: 5000px;
+    min-width: 500px;
+}
+.glitchy-bit.three {
+    top: 20%;
+    right: 20%;
+    border: 30px solid gray;
+    min-height: 50000px;
+    min-width: 50px;
+}
+.glitch-bit {
+    -webkit-animation: glitch 0.2s;
+    -moz-animation: glitch 0.2s;
+    -o-animation: glitch 0.2s;
+    animation: glitch 0.2s;
+}

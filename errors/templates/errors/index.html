@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,127 +12,14 @@
 
                                         est. 2016
 -->
-<style>
-body {
-    margin: 0em;
-    padding: 0em;
-    font-size: 100%;
-    color: black;
-    background-color: #ccc;
-}
-h1 {
-    text-align: center;
-    margin: 0em;
-    padding: 0em;
-    font-size: 5em;
-}
-p {
-    text-align: center;
-}
-#stickyhead {
-    top: 0px;
-    position: fixed;
-    background-color: white;
-    width: 100%;
-    padding: 1em 0em 2em 0em;
-    -webkit-box-shadow: 0 6px 4px -4px black;
-    -moz-box-shadow: 0 6px 4px -4px black;
-    box-shadow: 0 6px 4px -4px black;
-    min-height: 13em;
-}
-#arts {
-    text-align: center;
-    padding-top: 17em;
-}
-.sub {
-    text-align: center;
-    color: gray;
-}
-#est {
-    text-align: center;
-    color: gray;
-    font-size: smaller;
-}
-#randoform {
-    text-align: center;
-}
-.artlink {
-    background-color: white;
-    padding: 2em;
-    text-align: center;
-    -webkit-box-shadow: 0 4px 4px -4px black;
-    -moz-box-shadow: 0 4px 4px -4px black;
-    box-shadow: 0 4px 4px -4px black;
-    width: 90%;
-    margin: 1em auto;
-}
-@keyframes glitch {
-    0% { -webkit-transform: skewX(10deg); }
-    10% { -webkit-transform: skewX(-7deg); }
-    20% { -webkit-transform: skewX(21deg); }
-    30% { -webkit-transform: skewX(-70deg); }
-    40% { -webkit-transform: skewX(49deg); }
-    50% { -webkit-transform: skewX(-92deg); }
-    60% { -webkit-transform: skewX(9deg); }
-    70% { -webkit-transform: skewX(-8deg); }
-    80% { -webkit-transform: skewX(1deg); }
-    90% { -webkit-transform: skewX(4deg); }
-    100% { -webkit-transform: skewX(0deg); }
-}
-.glitch {
-    -webkit-animation: glitch 0.2s;
-    -moz-animation: glitch 0.2s;
-    -o-animation: glitch 0.2s;
-    animation: glitch 0.2s;
+<link rel="stylesheet" href="{% static "errors/css/reset.css" %}?v=1">
+<link rel="stylesheet" href="{% static "errors/css/errors.css" %}?v=1">
 
-    -webkit-animation-timing-function: ease-in;
-    -moz-animation-timing-function: ease-in;
-    -o-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-}
-.glitch-header {
-    -webkit-animation: glitch 0.5s;
-    -moz-animation: glitch 0.5s;
-    -o-animation: glitch 0.5s;
-    animation: glitch 0.5s;
-}
-.glitchy-bit {
-    position: fixed;
-    width: 10%;
-    z-index: -1;
-}
-.glitchy-bit.one {
-    top: 10%;
-    left: 30%;
-    border: 20px solid red;
-    min-height: 500px;
-    min-width: 5000px;
-}
-.glitchy-bit.two{
-    top: 50%;
-    left: 12%;
-    border: 10px solid blue;
-    min-height: 5000px;
-    min-width: 500px;
-}
-.glitchy-bit.three {
-    top: 20%;
-    right: 20%;
-    border: 30px solid green;
-    min-height: 50000px;
-    min-width: 50px;
-}
-.glitch-bit {
-    -webkit-animation: glitch 0.2s;
-    -moz-animation: glitch 0.2s;
-    -o-animation: glitch 0.2s;
-    animation: glitch 0.2s;
-}
-</style>
 <script
     src="http://code.jquery.com/jquery-2.2.4.min.js"
     integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
     crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -147,7 +35,7 @@ p {
         </form>
     </div>
     <br />
-    <div class="sub">proprietors: Matthew Britton &amp; Brett O'Connor</div>
+    <div class="sub">proprietors: <a href="http://www.matthewbritton.net/">Matthew Britton</a> &amp; <a href="http://logontheinternet.com/">Brett O'Connor</a></div>
 </div>
 
 <div id="arts">
@@ -166,36 +54,6 @@ p {
 <div class="glitchy-bit two"></div>
 <div class="glitchy-bit three"></div>
 
-<script type="text/javascript">
-$('.artlink').hover(
-    function(){ $(this).addClass('glitch') },
-    function(){ $(this).removeClass('glitch') }
-)
-
-$('#randoform').on('submit', function(e) {
-    e.preventDefault();
-    document.location = 'http://404error.gallery/' + $('#randovalue').val()
-});
-
-window.setTimeout(glitch_header,5000);
-function glitch_header() {
-    $("#stickyhead").addClass('glitch-header');
-    $("#stickyhead").one('webkitAnimationEnd oanimationend msAnimationEnd animationend',
-    function (e) {
-        $("#stickyhead").removeClass('glitch-header');
-    });
-    window.setTimeout(glitch_header,5000);
-}
-
-window.setTimeout(glitch_bits,3000);
-function glitch_bits() {
-    $(".glitchy-bit").addClass('glitch-bit');
-    $(".glitchy-bit").one('webkitAnimationEnd oanimationend msAnimationEnd animationend',
-    function (e) {
-        $(".glitchy-bit").removeClass('glitch-bit');
-    });
-    window.setTimeout(glitch_bits,3000);
-}
-</script>
+<script src="{% static "errors/js/errors.js" %}"></script>
 </body>
 </html>
