@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 import hashlib
 
 # Create your models here.
@@ -8,6 +9,13 @@ class ErrorArt(models.Model):
     artist_url = models.URLField(help_text="Artist homepage or whatever. Not required.",blank=True)
     slug = models.SlugField(help_text="Long and mystrious auto-generated slug. This is the 'URL' for this page, and the directory where its assets will be uploaded.",blank=False,default='',unique=True)
     content = models.TextField(help_text="The ENTIRE HTML for the page. You'll need to reference static assets like src=\"/media/[slug]/[asset].gif\" SAVE THIS RECORD FIRST TO UPLOAD FILES AND SEE THE SLUG. Then change the HTML. Yea it's silly. Required.",blank=False)
+
+    # fetch gallery mode setting for textbox
+    if settings.GALLERY_MODE:
+        gmode = "Enabled"
+    else:
+        gmode = "Disabled"
+    show_in_gallery_mode = models.BooleanField(default=1,help_text="Uncheck to hide when Gallery Mode is enabled. Gallery Mode is currently: <strong>%s</strong>" % (gmode))
     def save(self, *args, **kwargs):
         if self.slug == '':
             # slug is hexdigest of encoded artist name

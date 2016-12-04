@@ -31,6 +31,11 @@ if 'ALLOWED_HOSTS' in env:
     ALLOWED_HOSTS = eval(os.environ['ALLOWED_HOSTS'])
 else:
     ALLOWED_HOSTS = []
+# set this env variable to true to enable gallery mode
+if 'GALLERY_MODE' in env:
+    GALLERY_MODE = eval(os.environ['GALLERY_MODE'])
+else:
+    GALLERY_MODE = False
 
 
 # arts r big
