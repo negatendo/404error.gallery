@@ -9,7 +9,6 @@
 (__  ((  0 )(__  ( ) _)  )   / )   /(  O ))   / _( (_ \/    \/ (_/\/ (_/\ ) _)  )   / )  /
   (__/ \__/   (__/(____)(__\_)(__\_) \__/(__\_)(_)\___/\_/\_/\____/\____/(____)(__\_)(__/
 
-                            Matthew Britton and Brett O'Connor
                                         est. 2016
 -->
 <style>
@@ -20,16 +19,16 @@ body {
     color: black;
     background-color: #ccc;
 }
-h1,h2 {
+h1 {
     text-align: center;
     margin: 0em;
     padding: 0em;
+    font-size: 5em;
 }
 p {
     text-align: center;
 }
 #stickyhead {
-    font-family: sans-serif;
     top: 0px;
     position: fixed;
     background-color: white;
@@ -38,27 +37,33 @@ p {
     -webkit-box-shadow: 0 6px 4px -4px black;
     -moz-box-shadow: 0 6px 4px -4px black;
     box-shadow: 0 6px 4px -4px black;
-    min-height: 150px;
+    min-height: 13em;
 }
-.poop { border: 8px solid red; }
 #arts {
     text-align: center;
-    padding-top: 200px;
+    padding-top: 17em;
+}
+.sub {
+    text-align: center;
+    color: gray;
 }
 #est {
     text-align: center;
     color: gray;
+    font-size: smaller;
 }
 #randoform {
     text-align: center;
 }
 .artlink {
     background-color: white;
-    border: 1px solid #999;
-    padding: 1em;
-    margin: 1em;
+    padding: 2em;
     text-align: center;
-    font-size: xx-large;
+    -webkit-box-shadow: 0 4px 4px -4px black;
+    -moz-box-shadow: 0 4px 4px -4px black;
+    box-shadow: 0 4px 4px -4px black;
+    width: 90%;
+    margin: 1em auto;
 }
 @keyframes glitch {
     0% { -webkit-transform: skewX(10deg); }
@@ -133,7 +138,7 @@ p {
 
 <div id="stickyhead">
     <h1 id="header">404error.gallery</h1>
-    <div id="est">est. 2016</div>
+    <div class="sub">est. 2016</div>
     <p>Click on any of the links below to visit a nonexistant page. You can also use this form to browse to a page that doesn't exist and view a random 404.</p>
     <div id="randoform">
         <form>
@@ -141,13 +146,15 @@ p {
             <input type="Submit" value="Surprise Me">
         </form>
     </div>
+    <br />
+    <div class="sub">proprietors: Matthew Britton &amp; Brett O'Connor</div>
 </div>
 
 <div id="arts">
 {% if arts %}
   {% for art in arts %}
   <a href="{{ art.slug }}" class="art">
-      <div class="artlink">{{ art.artist }}</div>
+      <div class="artlink"><h2>{{ art.artist }}</h2></div>
   </a>
   {% endfor %}
 {% else %}
