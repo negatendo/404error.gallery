@@ -22,12 +22,13 @@ p {
     -webkit-box-shadow: 0 6px 4px -4px black;
     -moz-box-shadow: 0 6px 4px -4px black;
     box-shadow: 0 6px 4px -4px black;
-    max-height: 20%;
+    max-height: 15em;
     opacity: 0.9;
+    overflow: hide;
 }
 #arts {
     text-align: center;
-    padding-top: 10em;
+    padding-top: 14em;
 }
 .sub {
     text-align: center;
