@@ -5,7 +5,7 @@ $('.artlink').hover(
 
 $('#randoform').on('submit', function(e) {
     e.preventDefault();
-    document.location = 'http://404error.gallery/' + $('#randovalue').val()
+    document.location = '/' + $('#randovalue').val()
 });
 
 window.setTimeout(glitch_header,5000);
