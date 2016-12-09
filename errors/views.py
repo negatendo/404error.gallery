@@ -9,8 +9,7 @@ from django.views.decorators.cache import cache_page
 def index(request):
     random_error_art_list = get_error_arts_as_list()
     random.shuffle(random_error_art_list)
-    random_slug = generate_random_slug()
-    return render(request,'errors/index.html', { 'arts': random_error_art_list, 'random_slug': random_slug } )
+    return HttpResponse(random_error_art_list[0].content,status=404)
 
 # cache these pages so we go light on the lookup
 @cache_page(settings.CACHE_TIME)
