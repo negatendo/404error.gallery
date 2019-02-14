@@ -1,4 +1,4 @@
-Django==1.10.3
+django ~> 1.11.19
 PyYAML==3.12
 awsebcli==3.8.4
 blessed==1.9.5
